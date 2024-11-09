@@ -14,10 +14,10 @@ class Simulator:
 
     def run(self):
         print('='*20,"Weclome to 学在交大 system",'='*20)
-        print('1. 查询好友列表')
-        print('2. 添加好友')
-        print('3. 删除好友')
-        print('4. 查看好友信息')
+        print('1. 查询好友列表 Usage: 1')
+        print('2. 添加好友 Usage: 2 <name>')
+        print('3. 删除好友 Usage: 3 <name>')
+        print('4. 查看好友信息 Usage: 4')
         print('5. 退出')
         while 1:
             command = self.bash_info()
@@ -51,8 +51,14 @@ class Simulator:
         if args_lst[0] == '1':
             self.show_friends()
         elif args_lst[0] == '2':
+            if len(args_lst)!= 2:
+                print('command error, Usage: 2 <name>')
+                return 0
             self.add_friend(args_lst[1])
         elif args_lst[0] == '3':
+            if len(args_lst)!= 2:
+                print('command error, Usage: 3 <name>')
+                return 0
             self.del_friend(args_lst[1])
         elif args_lst[0] == '4':
             query_data = self.db.query(self.friends)

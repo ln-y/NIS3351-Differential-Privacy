@@ -38,6 +38,8 @@ class PrivacyDB:
         age_scale = sensitivity / self.age_epsilon
         score_scale = sensitivity / self.score_epsilon
 
+        hash_seed = ' '.join(query)
+        np.random.seed(hash(hash_seed) % (1<<32))
         return (df_out["age"].mean() + np.random.laplace(loc=0, scale=age_scale), df_out["score"].mean() + np.random.laplace(loc=0, scale=score_scale))
 
     def get_all_people(self):
