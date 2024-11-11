@@ -14,6 +14,8 @@ class Simulator:
 
     def run(self):
         print('='*20,"Weclome to 学在交大 system",'='*20)
+        with open("banner.txt", "r") as f:
+            print(f.read())
         print('1. 查询好友列表 Usage: 1')
         print('2. 添加好友 Usage: 2 <name>')
         print('3. 删除好友 Usage: 3 <name>')
