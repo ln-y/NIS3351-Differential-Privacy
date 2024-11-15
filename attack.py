@@ -168,6 +168,7 @@ def query_diff(real_query : list[tuple[float, float]], dp_query: list[tuple[floa
     fig, ax1 = plt.subplots()
     ax1.plot(real_age, label='real age', color = default_colors[0])
     ax1.plot(dp_age, label='dp age', color = default_colors[1])
+    plt.legend()
     ax1.set_ylabel('age')
     ax1.set_ylim(15,30)
     ax2 = ax1.twinx()

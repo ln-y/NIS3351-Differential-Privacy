@@ -38,6 +38,9 @@ class Simulator:
         if friend_name not in self.all_people:
             print(f'{friend_name} 不存在')
             return
+        if friend_name in self.friends:
+            print(f'{friend_name} 已经是好友')
+            return
         self.friends.append(friend_name)
     
     def del_friend(self, friend_name: str):
